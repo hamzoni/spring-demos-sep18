@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: br.com.jonyfs.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.008 s <<< FAILURE! - in br.com.jonyfs.DemoApplicationTests
+contextLoads(br.com.jonyfs.DemoApplicationTests)  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'producer': Invocation of init method failed; nested exception is org.springframework.jms.InvalidDestinationException: AmazonServiceException: getQueueUrl. RequestId: b5908a52-a975-5136-9005-de5b248f81a9
+HTTPStatusCode: 400 AmazonErrorCode: AWS.SimpleQueueService.NonExistentQueue; nested exception is javax.jms.InvalidDestinationException: AmazonServiceException: getQueueUrl. RequestId: b5908a52-a975-5136-9005-de5b248f81a9
+HTTPStatusCode: 400 AmazonErrorCode: AWS.SimpleQueueService.NonExistentQueue
+Caused by: org.springframework.jms.InvalidDestinationException: 
+AmazonServiceException: getQueueUrl. RequestId: b5908a52-a975-5136-9005-de5b248f81a9
+HTTPStatusCode: 400 AmazonErrorCode: AWS.SimpleQueueService.NonExistentQueue; nested exception is javax.jms.InvalidDestinationException: AmazonServiceException: getQueueUrl. RequestId: b5908a52-a975-5136-9005-de5b248f81a9
+HTTPStatusCode: 400 AmazonErrorCode: AWS.SimpleQueueService.NonExistentQueue
+Caused by: javax.jms.InvalidDestinationException: 
+AmazonServiceException: getQueueUrl. RequestId: b5908a52-a975-5136-9005-de5b248f81a9
+HTTPStatusCode: 400 AmazonErrorCode: AWS.SimpleQueueService.NonExistentQueue
+Caused by: com.amazonaws.services.sqs.model.QueueDoesNotExistException: The specified queue does not exist for this wsdl version. (Service: AmazonSQS; Status Code: 400; Error Code: AWS.SimpleQueueService.NonExistentQueue; Request ID: b5908a52-a975-5136-9005-de5b248f81a9)
+

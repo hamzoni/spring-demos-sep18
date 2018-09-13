@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+
+  activemq:
+    container_name: activemq
+    image: webcenter/activemq:5.14.3
+    networks: [backing-services]
+    environment:
+      ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT: "true"
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: admin
+      ACTIVEMQ_MIN_MEMORY: 512
+      ACTIVEMQ_MAX_MEMORY: 2048
+
+  service_broker:
+    image: saga-1-service-broker
+    depends_on:
+      - activemq
+    ports:
+      - "8090:8090"
+
+  service_a:
+    image: saga-1-service-a
+    depends_on:
+      - activemq
+    networks: [backing-services]
+
+  service_b:
+    image: saga-1-service-b
+    depends_on:
+      - activemq
+    networks: [backing-services]
+
+networks:
+  backing-services:
+    driver: bridge

@@ -1,0 +1,7 @@
+br/com/jonyfs/Producer.class
+br/com/jonyfs/Consumer.class
+br/com/jonyfs/Producer$1.class
+br/com/jonyfs/MyMessage.class
+br/com/jonyfs/JmsConfig.class
+br/com/jonyfs/MyMessage$MyMessageBuilder.class
+br/com/jonyfs/DemoApplication.class
